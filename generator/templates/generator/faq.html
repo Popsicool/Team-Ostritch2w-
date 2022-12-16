@@ -6,24 +6,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="../CSS/faq.css" rel="stylesheet" type="text/css" />
+  <link href="{% static 'css/faq.css' %}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <div id="fd">
-      <a href="{% url 'generator:index' %}">
-      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
-      <label id="flab" display="in-line">
-        QR Gen
-      </label></a>
-      <nav display="in-line">
-        <a href="{% url 'generator:aboutus' %}">About Us</a>
-        <a href="{% url 'generator:faq' %}">FAQ</a>
-        <a href="{% url 'generator:contactus' %}">Contact Us</a>
-        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
-    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
-      </nav>
-    </div>
+  {% include 'generator/_header2.html' %}
 
   <div id="sd">
     <h1 id="fh1">FAQ</h1>
@@ -77,51 +64,7 @@
       
     </ul>
   </div>
-
-  <div id="downdiv">
-      <img src="../img/footerLogo.png" alt="" id="footerLogo">
-      <div id="dd">
-        <p><b>Contact</b></p>
-        <p>QRcodegen@gmail.com</p>
-        <p>08165396547</p>
-        <p></p>
-      </div>
-
-       <div id="dd">
-        <p><b>About Us</b></p>
-        <p>Contact Us</p>
-        <p>Advertise Us</p>
-        <p>Create QRcode</p>
-      </div>
-       <div id="dd">
-        <p><b>Information</b></p>
-        <p>FAQ</p>
-        <p>Privacy policy</p>
-        <p>Cookies policy</p>
-      </div>
-      <div id="dd">
-        <p><b>Review</b></p>
-        <p>Google</p>
-        <p>Twitter</p>
-        <p>Facebook</p>
-      </div>
-
-       <div id="dd">
-        <p><b>Subscribe to Newsletter</b></p>
-        <p>Get daily update about QR code generator</p>
-        <p></p>
-        <label font-size="7px" color="white" class="">
-          <input type="email" placeholder="email address" class="email">
-          <a href="" id="subs">Subscribe</a>
-        </label>
- </div> 
-    </div>
-<div id="footer">
-  <hr></hr>
-  <footer>
-    <p id="3p">Copyright@2022. All right reserved.</p>
-  </footer>
-</div>
+ {% include 'generator/_footer.html' %}
     
  
   <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>  -->

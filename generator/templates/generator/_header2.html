@@ -1,0 +1,39 @@
+    {% load static %}
+    <style>
+      .nav{
+        width: 60%;
+        display: grid;
+        margin-top: 1%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        float: right;
+      }
+      .nav > div >a{
+        font-size: 14px;
+        font-weight: 400;
+        font-family: sans-serif;
+        
+      }
+      .nav > div >button{
+        font-size: 21px;
+        font-weight: 400;
+        font-family: sans-serif;
+        border-radius: 2%;
+        padding: 3%;
+      }
+
+    </style>
+    <div id="fd">
+      <a href="{% url 'generator:index' %}">
+      <img src="{% static 'images/Vector (6).png' %}" alt="cc" id="logo">
+      <label id="flab" display="in-line">
+        QR Gen
+      </label></a>
+      <div class="nav">
+        <div><a href="{% url 'generator:aboutus' %}" style="color: rgba(111, 80, 181, 1);">About Us</a></div>
+        <div><a href="{% url 'generator:faq' %}">FAQS</a></div>
+        <div><a href="{% url 'generator:contactus' %}">Contact Us</a></div>
+        <div><a id="asi" href="{% url 'generator:login' %}">Sign In</a></div>
+        <div><a id="asu" href="{% url 'generator:signup' %}">Sign Up</a></div>
+      </div>
+      </nav>
+    </div>

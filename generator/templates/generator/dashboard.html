@@ -5,112 +5,165 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <title>Dashboard</title>
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"/>
 </head>
 <body>
-    <div class="container">
-        <h2 class="header">Welcome back </h2>
-        <p>What would you need a Qr code for?</p>
-        
-        <div class="form">
-        <img scr="{% static 'images/vector2.png' %}"><button class="btnfolder"  type="text">New Folder</button>
-        <a href="{% url 'generator:generate_qr' %}"><button class="btnsubmit" type="submit">Create Qr Code</button></a>
+    <section id="sidebar">
+        <div id="sidebar-nav">
+            <div class="logo mb-5">
+                <!-- <img style="width: 20%;" src="{% static 'images/Vector (6).png' %}" alt=""> -->
+            </div>
+            
+            <h4>Discover</h4>
+            <ul>
+                <li class=""><a href="#"><i class="fa-solid fa-qrcode"></i> QR Codes</a></li>
+                <li class=""><a href="#"><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.91667 15.3749V6.20822C2.91667 2.87488 3.75001 2.04155 7.08334 2.04155H12.9167C16.25 2.04155 17.0833 2.87488 17.0833 6.20822V14.5415C17.0833 14.6582 17.0833 14.7749 17.075 14.8915" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.29167 12.8749H17.0833V15.7915C17.0833 17.3999 15.775 18.7082 14.1667 18.7082H5.83334C4.22501 18.7082 2.91667 17.3999 2.91667 15.7915V15.2499C2.91667 13.9415 3.98334 12.8749 5.29167 12.8749Z" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.66667 6.20821H13.3333" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.66667 9.12488H10.8333" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                     Pricing</a></li>
+                <li class=""><a href="#"><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.05 9.07488L17.2333 12.5582C16.5333 15.5665 15.15 16.7832 12.55 16.5332C12.1333 16.4999 11.6833 16.4249 11.2 16.3082L9.8 15.9749C6.325 15.1499 5.25 13.4332 6.06667 9.94988L6.88334 6.45821C7.05 5.74988 7.25 5.13321 7.5 4.62488C8.475 2.60821 10.1333 2.06655 12.9167 2.72488L14.3083 3.04988C17.8 3.86655 18.8667 5.59155 18.05 9.07488Z" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.55 16.5332C12.0333 16.8832 11.3833 17.1749 10.5917 17.4332L9.27499 17.8665C5.96666 18.9332 4.22499 18.0415 3.14999 14.7332L2.08333 11.4415C1.01666 8.13321 1.89999 6.38321 5.20833 5.31654L6.52499 4.88321C6.86666 4.77488 7.19166 4.68321 7.49999 4.62488C7.24999 5.13321 7.04999 5.74988 6.88333 6.45821L6.06666 9.94988C5.24999 13.4332 6.32499 15.1499 9.79999 15.9749L11.2 16.3082C11.6833 16.4249 12.1333 16.4999 12.55 16.5332Z" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.5333 7.48322L14.575 8.50822" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.71666 10.7082L12.1333 11.3249" stroke="#605F5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                     FAQS</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="{% url 'generator:logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
         </div>
-
-        <div class="coantainer-fluid">
-        <div class="get-Qr">
-            <h2>Get Qr code for whatever purpose and have<br> url in just a scan <br></h2>
-
-             <p>Incase of a special Qr code check <br>our pricing and have 30% off today<br></p>
-           
-              <a href="{% url 'generator:generate_qr' %}"><button type="submit" class="btn">Create Qr Code</button></a>
+    </section>
+    <!-- Content -->
+    <section id="content" class="container">
+        <div class="container content">
+            <div class="content-header d-flex justify-content-between align-items-center">
+                <div>
+                  <h1>Welcome back,</h1>
+                  <p class="fs-4 fw-3 text-black">What would you need a QR code for?</p>
                 </div>
+                <div class="btns">
+                    <button type="button" class="btn btn-outline-primary btn-lg"> <i class="fa-solid fa-angle-left"></i> New folder</button>
+                    <a href="{% url 'generator:generate_qr' %}"><button type="button" class="btn btn-primary btn-lg">create QR code</button></a>
+                </div>
+            </div>
+            <div class="widget-box d-flex align-items-center justify-content-between px-4 py-3">
+                <div class="widget-header">
+                    <h2 class="fs-4 fw-3 w-75 mb-3">Get QR code for whatever purpose and have url in just a scan</h2>
+                    <p class="w-50">In case of special QR codes, check our pricing and have 30% off today</p>
 
-                <div class="form-fluid">
-            <img  class="img" src="{% static 'images/image 8.png' %}" alt="Qr code"/>
+                    <a href="{% url 'generator:generate_qr' %}" class="btn btn-primary" role="button" data-bs-toggle="button">create QR code</a>
                 </div>
+                <div class="qr-code">
+                    <img src="{% static 'images/image 8.png' %}" alt="">
                 </div>
-                <div class="col">
+            </div>
+
+            <div class="widget-box d-flex justify-content-between mt-4" style="background-color: #fff!important;">
+                <div class="folders">
                     <h2>My Folders</h2>
-                    <button type="submit" class="btn-1">Search</button>
                 </div>
-                <div class="section">
-                    <div class="section-form">
-                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
-                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+                <div class="widget-content">
+                    <div class="input-group">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="form-control" placeholder=" Search qr code" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
                     </div>
-                    <div class="edit">
-                        <p class="0 scan">scans</p>
-                        <p class="edi">edit</p>
-                        <button type="submit" class="btn-3">Details</button>
-                        <button type="submit" class="btn-4">Save progress</button>
-
-
-                    </div>
-
-
-
                 </div>
-                <div class="section-b">
-                    <div class="section-formb">
-                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
-                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+            </div>
+            {% for qr in qr %}
+
+            <div class="widget-box mt-4" style="background-color: #F9F9F9 !important;">
+                <div class="widget-header d-flex align-items-center justify-content-between pl-5 py-3">
+                    <div class="check">
+                        <input type="checkbox" class="px-4">
                     </div>
-                    <div class="edit">
-                        <p class="2 scan">scans</p>
-                        <p class="edi">edit</p>
-                        <button type="submit" class="btn-3">Details</button>
-                        <button type="submit" class="btn-4">Save progress</button>
-
-
+                    <div class="code-img">
+                        <img src="{% static 'images/image 8.png' %}" alt="">
                     </div>
-
-
-
+                    <div>
+                        <h5>website</h5>
+                        <h4>Linkedln</h4>
+                        <!-- <p>Created 11th dec, 2022</p> -->
+                    </div>
+                    <!-- <div>
+                        <p>0 Scans</p>
+                    </div> -->
+                    <div>
+                        <a href=""><button type="button" class="btn btn-primary">Details</button></a>
+                    </div>
+                    <div>
+                        <a href=""><button type="button" class="btn btn-outline-primary btn-lg"> <i class="fa-solid fa-angle-left"></i> Save Progress</button></a>
+                    </div>
                 </div>
-                <div class="section-c">
-                    <div class="section-formc">
-                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
-                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+            </div>
+
+            {% endfor %}
+            <!-- <div class="widget-box mt-4" style="background-color: #F9F9F9 !important;">
+                <div class="widget-header d-flex align-items-center justify-content-between pl-5 py-3">
+                    <div class="check">
+                        <input type="checkbox" class="px-4">
                     </div>
-                    <div class="edit">
-                        <p class="4 scan">scans</p>
-                        <p class="edi">edit</p>
-                        <button type="submit" class="btn-3">Details</button>
-                        <button type="submit" class="btn-4">Save progress</button>
-
-
+                    <div class="code-img">
+                        <img src="{% static 'images/image 8.png' %}" alt="">
                     </div>
-
-
-
+                    <div>
+                        <h5>website</h5>
+                        <h4>Linkedln</h4>
+                        <p>Created 11th dec, 2022</p>
+                    </div>
+                    <div>
+                        <p>0 Scans</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">Details</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary btn-lg"> <i class="fa-solid fa-angle-left"></i> Save Progress</button>
+                    </div>
                 </div>
-
-           
+            </div>
+            <div class="widget-box mt-4" style="background-color: #F9F9F9 !important;">
+                <div class="widget-header d-flex align-items-center justify-content-between pl-5 py-3">
+                    <div class="check">
+                        <input type="checkbox" class="px-4">
+                    </div>
+                    <div class="code-img">
+                        <img src="{% static 'images/image 8.png' %}" alt="">
+                    </div>
+                    <div>
+                        <h5>website</h5>
+                        <h4>Linkedln</h4>
+                        <p>Created 11th dec, 2022</p>
+                    </div>
+                    <div>
+                        <p>0 Scans</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">Details</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary btn-lg"> <i class="fa-solid fa-angle-left"></i> Save Progress</button>
+                    </div>
+                </div> -->
+            <!-- </div> -->
             
-
-
-        </div >
-        My QRs <br>
-    {% for qr in qr %}
-    <!-- <img src="./logo.png" alt="aa" width="70"> -->
-    <img class="img-1" style="width: 30px;"  src="{% static 'images/image 8.png' %}"/>
-    <a href="{% url 'generator:download' qr.id 'png' %}"> Download png</a>
-    <a href="{% url 'generator:download' qr.id 'pdf' %}"> Download pdf</a>
-    <!-- <a href="{% url 'generator:download' qr.id 'jpg' %}"> Download jpg</a> -->
-    <a href="{% url 'generator:download' qr.id 'svg' %}"> Download svg</a>
-    <a href="{% url 'generator:download' qr.id 'jpeg' %}"> Download jpeg</a>
-    <a href="{% url 'generator:delete' qr.id %}">Delete QR</a>
-    <br>
-    {% endfor %}
-        
-            
-        
-
-
-</div>
-
-    
+        </div>
+    </section>
 </body>
 </html>
+
+        
+        
+        
+        

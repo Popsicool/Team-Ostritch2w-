@@ -119,7 +119,6 @@ class dashboard(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
         qr = QRCollection.objects.filter(qr_user = user)
-        print(qr)
         context={"user":user, "qr": qr}
         return render(request, "generator/dashboard.html",context)
     # def post(self,request,response):

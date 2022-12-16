@@ -18,21 +18,7 @@
 <body>
 
     <!-- Navbar Section Here-->
-    <div id="fd">
-      <a href="{% url 'generator:index' %}">
-      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
-      <label id="flab" display="in-line">
-        QR Gen
-      </label></a>
-      <nav display="in-line">
-        <a href="{% url 'generator:aboutus' %}">About Us</a>
-        <a href="{% url 'generator:faq' %}">FAQ</a>
-        <a href="{% url 'generator:contactus' %}">Contact Us</a>
-        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
-    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
-      </nav>
-    </div>
-
+  {% include 'generator/_header2.html' %}
     <!-- Hero Section Here -->
 
     <section class="hero">

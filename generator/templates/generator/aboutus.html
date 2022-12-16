@@ -1,99 +1,229 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About us</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="{% static 'css/aboutCss.css' %}" />
-  </head>
-  <body>
-  <div id="fd">
-      <a href="{% url 'generator:index' %}">
-      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
-      <label id="flab" display="in-line">
-        QR Gen
-      </label></a>
-      <nav display="in-line">
-        <a href="{% url 'generator:aboutus' %}">About Us</a>
-        <a href="{% url 'generator:faq' %}">FAQ</a>
-        <a href="{% url 'generator:contactus' %}">Contact Us</a>
-        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
-    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
-      </nav>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About us</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/aboutCss.css' %}" />
+		<style>
+			.about-top {
+				height: 466px;
+			}
+			.all-all {
+				margin: 6%;
+			}
+			.about2 {
+				/* text-align: center; */
+				align-items: center;
+			}
+			.about-card-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 25px;
+				margin-bottom: 25px;
+			}
+			.card-in-about {
+				display: grid;
+				margin-top: 20px;
+			}
+			.card-in-about > img {
+				height: 248px;
+				width: 384px;
+			}
+			.card-in-about > button {
+				width: 137px;
+				height: 48px;
+				font-size: 16px;
+				font-weight: 400;
+				font-family: sans-serif;
+				color: rgba(111, 80, 181, 1);
+				background-color: white;
+				/* text-align: center;
+  align-items: center; */
+				justify-self: center;
+				margin-top: 10px;
+				margin-left: -100px;
+				border: 1px solid rgba(111, 80, 181, 1);
+				border-radius: 5px;
+			}
+			.about2 > p,
+			.mis > p, .mr >p {
+				color: black;
+				font-size: 20px;
+				line-height: 32px;
+				font-weight: 400;
+			}
+			.ttt {
+				text-align: center;
+				color: rgba(111, 80, 181, 1);
+				font-size: 40px;
+				line-height: 64px;
+				font-weight: 700;
+				margin-top: 5%;
+				margin-bottom: 5%;
+			}
 
-    <section class="hero">
-      <div class="conatinerLeft">
-        <img src="./img/Frame.png" alt="" />
-      </div>
-      <div class="conatinerRight">
-        <h1>About us</h1>
-        <p>
-          We are a group of team dedicated to providing QR Code services to our
-          clients. Our service ranges from real time to offline QR Code
-          optimization.
-        </p>
-
-      </div>
-    </section>
-
-    <div id="downdiv">
-      <img src="../img/footerLogo.png" alt="" id="footerLogo">
-      <div id="dd">
-        <p><b>Contact</b></p>
-        <p>QRcodegen@gmail.com</p>
-        <p>08165396547</p>
-        <p></p>
-      </div>
-
-       <div id="dd">
-        <p><b>About Us</b></p>
-        <p>Contact Us</p>
-        <p>Advertise Us</p>
-        <p>Create QRcode</p>
-      </div>
-       <div id="dd">
-        <p><b>Information</b></p>
-        <p>FAQ</p>
-        <p>Privacy policy</p>
-        <p>Cookies policy</p>
-      </div>
-      <div id="dd">
-        <p><b>Review</b></p>
-        <p>Google</p>
-        <p>Twitter</p>
-        <p>Facebook</p>
-      </div>
-
-       <div id="dd">
-        <p><b>Subscribe to Newsletter</b></p>
-        <p>Get daily update about QR code generator</p>
-        <p></p>
-        <label font-size="7px" color="white" class="">
-          <input type="email" placeholder="email address" class="email">
-          <a href="" id="subs">Subscribe</a>
-        </label>
- </div> 
-    </div>
-<div id="footer">
-  <hr></hr>
-  <footer>
-    <p id="3p">Copyright@2022. All right reserved.</p>
-  </footer>
-</div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+			.our-team {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.view-more {
+				background-color: rgba(111, 80, 181, 1);
+				color: rgba(255, 255, 255, 1);
+				width: 137px;
+				height: 48px;
+				/* justify-self: center; */
+				margin-left: 40%;
+				margin-bottom: 100px;
+				margin-top: 100px;
+			}
+			.tA {
+				font-size: 28px;
+				font-family: serif;
+				line-height: 40px;
+				font-weight: 700;
+				color: black;
+				border-bottom: 1px solid black;
+				width: 30%;
+				text-align: center;
+				padding-bottom: 25px;
+				margin: 5px 70px;
+			}
+			.about5 > img {
+				margin-left: 5%;
+				padding-top: 5%;
+			}
+			.mis {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+			}
+      .mr{
+        display: grid;
+				grid-template-columns: 2fr 1fr;
+      }
+		</style>
+	</head>
+	<body>
+		{% include 'generator/_header2.html' %}
+		<div class="about-top">
+			<img src="{% static 'images/ABout.png' %}" alt="" />
+		</div>
+		<div class="all-all">
+			<div class="about2">
+				<h3 class="ttt">About Us</h3>
+				<p>
+					QR Code gen is dedicated to the provision of qr codes. We rely on
+					objective, accurate, and reliable data in designing efficient qr
+					solutions for our fast growing clients. Our team is in tune with the
+					demands of designing qr codes for individuals and groups, thus, we are
+					relentless in creating bespoke global qr for our clients and partners.
+					We offer opportunities to experience the best for individuals and
+					groups who are looking to use codes for premium services at no cost.
+					Based on consistent innovation, our professional staff help you to
+					generate the best qr codes even for your businesses. Visit the contact
+					us page to find out more about us on how you can get started with our
+					life-changing qr generator.
+				</p>
+			</div>
+			<div class="about3">
+				<h3 class="ttt">Qr codes we generate</h3>
+				<div class="about-card">
+					<div class="about-card-row">
+						<div class="card-in-about">
+							<img src="{% static 'images/con2.png' %}" alt="" />
+							<button>Website</button>
+						</div>
+						<div class="card-in-about">
+							<img src="{% static 'images/Rectangle 12.png' %}" alt="" />
+							<button>Food menu</button>
+						</div>
+						<div class="card-in-about">
+							<img src="{% static 'images/Rectangle 12 (1).png' %}" alt="" />
+							<button>Coupon</button>
+						</div>
+					</div>
+					<div class="about-card-row">
+						<div class="card-in-about">
+							<img
+								class="card-im"
+								src="{% static 'images/Rectangle 12 (2).png' %}"
+								alt=""
+							/>
+							<button>MP3</button>
+						</div>
+						<div class="card-in-about">
+							<img src="{% static 'images/Rectangle 12 (3).png' %}" alt="" />
+							<button>Hotels</button>
+						</div>
+						<div class="card-in-about">
+							<img src="{% static 'images/Rectangle 12 (4).png' %}" alt="" />
+							<button>Health</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="about4">
+				<div><button class="view-more" style="">View more</button></div>
+				<h3 class="ttt">Our Team</h3>
+				<div class="our-team">
+					<div>
+						<img src="{% static 'images/Rectangle 6.png' %}" alt="" />
+						<p class="tA">Pappy</p>
+					</div>
+					<div>
+						<img src="{% static 'images/Rectangle 7.png' %}" alt="" />
+						<p class="tA">Bee</p>
+					</div>
+					<div>
+						<img src="{% static 'images/Rectangle 8.png' %}" alt="" />
+						<p class="tA">Ariyo</p>
+					</div>
+				</div>
+			</div>
+			<div class="about5">
+				<h3 class="ttt">Our Partner</h3>
+				<img src="{% static 'images/Rectangle 21.png' %}" alt="" />
+			</div>
+			<div class="about6">
+				<h3 class="ttt">Our Mission</h3>
+				<div class="mis">
+					<img src="{% static 'images/Rectangle 14.png' %}" alt="" />
+					<p style="margin-left: 3%">
+						Our mission is to create Qr codes that is usable and that can be
+						used in placed of designs to help purposes and businesses to create
+						a fast and usable qr codes in the fast transforming digital world.
+					</p>
+				</div>
+			</div>
+			<div class="about7">
+        <h3 class="ttt">Our Vision</h3>
+        <div class="mr">
+				<p>
+					Our vision is to innovate, present, and generate excellent qr services
+					to our clients providing them with the best qr designs as well as
+					guaranteed premium offers that exceed their expectations. With these,
+					we aim to earn a reputation as the most responsive, customer-centric,
+					and most preferred qr code organisation in the world.
+				</p>
+        <img src="{% static 'images/Rectangle 14 (1).png' %}" alt="">
+        </div>
+			</div>
+		</div>
+		{% include 'generator/_footer.html' %}
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
