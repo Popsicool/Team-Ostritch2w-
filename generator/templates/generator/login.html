@@ -1,0 +1,57 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/auth.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>Sign up</title>
+</head>
+<body>
+  <div class="auth">
+  <div class="sign-left">
+    <div class="auth-form">
+
+    <form action="{% url 'generator:login' %}" method="POST">
+      {% csrf_token %}
+      {% for message in messages %}
+      <p class="message">{{message}}</p>
+      {% endfor %}
+      <h2>Welcome Back!</h2>
+      <p>Lets help you generate your best  QR codes</p>
+  
+      <label for="email">Email</label> <br>
+      <input type="email" name="email" placeholder="abc@gmail.com" required><br>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+  <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <br><br>
+  <div class="login-options">
+  <input type="checkbox" class="check"> <p>Keep me logged in for 30 days</p><p><a href="">Forgot password</a></p>
+  </div>
+  <br>    
+  <button class="acc-cre" type="submit">Sign In</button>
+    </form>
+    <p class="bbb">Dont have an account? <a href="{% url 'generator:signup' %}">sign uo</a></p>
+    </div>
+  </div>
+  <div class="sign-right">
+    <img src="{% static 'images/Frame 33985.png' %}" alt="">
+  </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
+</body>
+</html>

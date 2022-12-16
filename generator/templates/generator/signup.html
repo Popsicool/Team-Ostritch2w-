@@ -1,0 +1,73 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/auth.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>Sign up</title>
+</head>
+<body>
+  <div class="auth">
+  <div class="sign-left">
+    <div class="auth-form">
+
+    <form action="{% url 'generator:signup' %}" method="POST">
+      {% csrf_token %}
+      {% for message in messages %}
+      <p class="message">{{message}}</p>
+      {% endfor %}
+      <h2>Create an account</h2>
+      <p>Lets help you generate your best  QR codes</p>
+      <label for="name">Your Name</label><br>
+      <input type="text" name="name" placeholder="Tolu Ariyo" required><br>
+      <label for="email">Email</label> <br>
+      <input type="email" name="email" placeholder="abc@gmail.com" required><br>
+      <label for="phone">Phone Number</label><br>
+      <input type="tel" placeholder="080000000000" name="phone_number" required><br>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+  <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <label for="password2">Re-enter Password</label><br>
+      <input type="password" name="password2" autocomplete="current-password" required="" id="id_password2">
+  <i class="far fa-eye" id="togglePassword2" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <br><br><input type="checkbox" class="check" required> By creating an account, you agree to our terms and conditions
+  <br>    
+  <button class="acc-cre" type="submit">Create Account</button>
+    </form>
+    <p class="bbb">Already have an account? <a href="{% url 'generator:login' %}">Log in</a></p>
+    </div>
+  </div>
+  <div class="sign-right">
+    <img src="{% static 'images/Frame 33985.png' %}" alt="">
+  </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
+
+    <script>
+    const togglePassword2 = document.querySelector('#togglePassword2');
+  const password2 = document.querySelector('#id_password2');
+
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
+</body>
+</html>

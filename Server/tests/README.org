@@ -1,6 +1,0 @@
-* Test
-Strictly testing using Jest/Supertest
-
-** Environment setup
-Files are setup for anyone to do the test with some badic example.
-Read Jest and superagent docs to help you all further.

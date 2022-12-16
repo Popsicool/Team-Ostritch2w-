@@ -1,0 +1,117 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="top1">
+	<h3>Create QR Code</h3>
+	<div class="ima">
+		<img src="{% static 'images/Group 14.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 1.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 15.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 2.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 16.png' %}" alt="title-img" />
+	</div>
+</div>
+<div class="all-cards">
+    <h3>Choose Category</h3>
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame lap.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 1.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 3.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Framez.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+
+</div>
+
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (1).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (2).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (3).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+
+</div>
+
+
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (4).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Framer.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (5).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (6).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+
+</div>
+
+</div>
+
+
+<div class="button">
+    <a href="{% url 'generator:dashboard' %}"><button class="cancel">Cancel</button></a>
+    <a href="{% url 'generator:genqr2' %}"><button class="next">Next</button></a>
+</div>
+
+
+{% endblock %}
