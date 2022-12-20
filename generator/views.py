@@ -270,15 +270,18 @@ class download_qr(LoginRequiredMixin, View):
         file_type = file_type.lower()
         qr_name = request.session.get("qr_name")
         qr_url = request.session.get("qr_url")
-        try:
-            qr = QRCollection.objects.create(
+        
+        qr = QRCollection.objects.create(
                     qr_user = request.user,
                     category = 'TEXT',
                     qr_info = qr_name,
                     )
-            qr = qr.qr_code
-        except:
-            qr = "default.jpeg"
+        qr = qr.qr_code
+        print(".......")
+        print(type(qr))
+        print(".......")
+        # except:
+        #     qr = "default.jpeg"
         obj = MEDIA_ROOT + '/' + str(qr)
         if file_type == "pdf":
             filepath, filename = convert_to_pdf(obj)

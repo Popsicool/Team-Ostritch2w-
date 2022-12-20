@@ -95,6 +95,7 @@ class QRCollection(models.Model):
          # set size of QR code
         buffer=BytesIO()
         QRimg.save(buffer, 'PNG')
+        print((type(QRimg)))
         self.qr_code.save(f'{self.qr_user.name}{random.randint(0,9999)}.png',File(buffer),save=False)
         print(self.qr_code)
         super().save(*args,**kwargs)
